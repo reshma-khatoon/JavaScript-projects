@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,38 +8,23 @@
     <title>Weather App</title>
 </head>
 <body>
+    <div>
+    <div class="app">
     <div class="box">
         <p>
           <h1>Weather App</h1>
          </p> 
-        
+         <div class="form">
+    <input type="text" id="city" name="city name"  placeholder="Enter city name" required><br><br>
+    
+            <button  id="button" required>submit<br><br>
+            </div>
+    <div id="weather-info"></div>
+    <div id="showError"></div>
+        <script src="index.js"></script>
     </div>
-</body>
-</html> -->
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="main-div">
-        <div class="inner-div">
-                <h1>Weather App</h1>
-                <input type="text" id="input" placeholder="enter text ">
-                <button id="button">search</button>
-                <div id="weather-info">
-
-                </div>
-                <div id="showError"></div>
-                <script src="index.js"></script>
-        </div>
+    
+    </div>
     </div>
 </body>
 </html>

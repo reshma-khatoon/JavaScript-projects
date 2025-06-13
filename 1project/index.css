@@ -1,4 +1,12 @@
-/* .box{
+.app{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+
+
+.box{
     width: 400px;
       height: 200px;
       background-color: lightblue;
@@ -6,55 +14,23 @@
       padding: 10px;
       margin: 20px;
       border-radius: 8px;
-} */
-
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.main-div{
-    height: 100vh;
-    width:100vw;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.inner-div{
-    height: 250px;
-    width: 350px;
-    /* border: 2px solid black; */
-    background-color: azure;
-    border: 2px solid black;
-    border-radius: 10px ;
-    box-shadow: 2px 2px 2px 2px;
-}
-h1{
-    margin-left: 75px;
+      text-align: center;
+      
 }
 
-.input{
-      margin-left: 65px;
-      margin-top: 20px;
-      padding: 5px;
-      border-radius: 5px;
+.form{
+  text-align: center;
 }
-.button{
-      padding: 5px;
-      font: 700; 
-       border-radius: 5px;
-       font-size: bold;
-       font-weight: 800;
-       color: white;
-        background-color: green;
+.form >button{
+  width: 70px;
+  height: 40px;
+  background-color: brown;
+  padding: 10px;
+  margin: 5px;
+      border-radius: 8px;
+      text-align: center;
+      color: bisque;
+
 }
-.button:hover{
-    background-color: darkgreen;
-    padding: 7px;
-}
-#showError {
-  color: red;
-  font-weight: bold;
-}
+
+

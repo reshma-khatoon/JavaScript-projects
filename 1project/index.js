@@ -1,51 +1,49 @@
-const apikey="63038d1cd3634b2cd0756023cdfe44a0"
- 
- document.getElementById('button').addEventListener("click",()=>{
-     const city=document.getElementById('input').value.trim();
-     if(city==="") return showError('plz enter a city name');
-     else{
-        fetchData(city);
-     }
- })
- async function  fetchData(city) {
-     let url=(https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric)
-    //   console.log(url,"hello");
-      
+const apiKey="d009bf65b9d5a52949031070b3741096";
+const city= document.getElementById('city');
+const button= document.getElementById('button');
+const weatherinfo = document.getElementById('weather-info');
+const showError= document.getElementById('showError');
 
-        try {
-            let response = await fetch(url)
-           let data= await response.json()  
-           console.log(data);
-            
+button.addEventListener("click",()=>{
+    const cityName= city.value.trim();{
+if (cityName === "") {
+         error("please enter a city name")  }
+    else{
+        fetchApi(cityName)
+    }
+    }
+});
 
-           if(data.cod==='404'){
-            showError('city not found')
 
-           }
-           else{
-            displayData(data)
-           }
-
-         
-        } catch (error) {
-             showError('cannot fetch data')
-        }
-    
+async function fetchApi(cityName) {
+    const api=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+    try {
+        const response=await fetch(api)
+       const data= await response.json()
+       console.log(data);
+       
+       if (data.cod==="404") {
+        error("this city doesn't exist")
+       } else {
+        cityData(data)
+       }
+        
+    } catch (error) {
+        error("can't find data")
+    }
 }
 
-function displayData(data) {
-     document.getElementById('weather-info').innerHTML=`
-      <h2>  city-name:${data.name}</h2>
-        <p>  country:${data.sys.country}</p>
-        <p>  Temperature:${data.main.temp}</p>
-        <p>wind speed:${data.wind.deg}</p>
-        <p> wind speed:${data.wind.speed}</p>
-      
-     `
+function cityData(data) {
+    weatherinfo.innerHTML = `
+        <h3>${data.name}, ${data.sys.country}</h3>
+        <p>Temperature: ${data.main.temp}°C</p>
+        <p>sunrise: ${data.sys.sunrise}</p>
+        <p>Weather: ${data.weather[0].main}</p>
+        <p>Description: ${data.weather[0].description}</p>
+        <p>Humidity: ${data.main.humidity}%</p>
+        <p>Wind Speed: ${data.wind.speed} m/s</p>`
 }
 
-function showError(msg) {
-     document.getElementById('showError').textContent=msg;
-     document.getElementById('weather-info').textContent='';
-
+function error (message) {
+    showError.textContent=message
 }

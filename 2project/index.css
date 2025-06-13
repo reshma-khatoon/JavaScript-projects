@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    margin-top: 150px;
+    background-color: purple;
+
+}
+h1{
+    font-size: xx-large;
+    color: rgb(107, 9, 244);
+    text-decoration: underline;
+}
+button{
+    border-radius: 5px;
+    font: 900;
+    color: white;
+    background-color: green;
+    padding: 10px 20px;
+    font-size: medium;
+}
+p{
+    font: bolder;
+    font-size: xx-large;
+}
